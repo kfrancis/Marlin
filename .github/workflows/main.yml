@@ -145,7 +145,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: SKR14TURBO_TMC2208_BTT_TFT Artifact
       with:
-        name: SKR14TURBO_TMC2208_BTT_TFT_firmware
+        name: SKR14TURBO_TMC2209_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
         
     - name: Cleanup bin
