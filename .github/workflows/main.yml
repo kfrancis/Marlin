@@ -48,7 +48,7 @@ jobs:
     # SKR14
     - name: Copy Configs
       run: |
-        del ./Marlin/Configuration.h
+        rm ./Marlin/Configuration.h
         \cp ./buildconfigs/SKR14_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
         
     - name: PlatformIO build for LPC1768
@@ -63,7 +63,7 @@ jobs:
     # SKR14 Turbo
     - name: Copy Configs
       run: |
-        del ./Marlin/Configuration.h
+        rm ./Marlin/Configuration.h
         \cp ./buildconfigs/SKR14TURBO_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
         
     - name: PlatformIO build for LPC1769
