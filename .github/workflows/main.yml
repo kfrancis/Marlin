@@ -46,6 +46,11 @@ jobs:
     - uses: actions/checkout@v2
       
     # SKR14
+    - name: Copy Configs
+      run: |
+        mv ${{ github.workspace }}/Marlin/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h.old
+        mv ${{ github.workspace }}/buildconfigs/SKR14_TMC2209_BTT_TFT/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h
+        
     - name: PlatformIO build for LPC1768
       run: pio run --environment=LPC1768
       
@@ -56,6 +61,11 @@ jobs:
         path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
 
     # SKR14 Turbo
+    - name: Copy Configs
+      run: |
+        mv ${{ github.workspace }}/Marlin/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h.old
+        mv ${{ github.workspace }}/buildconfigs/SKR14TURBO_TMC2209_BTT_TFT/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h
+        
     - name: PlatformIO build for LPC1769
       run: pio run --environment=LPC1769
       
