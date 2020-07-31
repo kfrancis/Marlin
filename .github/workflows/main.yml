@@ -73,7 +73,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: SKR13_TMC2209_BTT_TFT Artifact
       with:
-        name: SKR13_TMC2209_BTT_TFT
+        name: SKR13_TMC2209_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
         
     - name: Cleanup bin
@@ -91,7 +91,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: SKR14_TMC2208_BTT_TFT Artifact
       with:
-        name: SKR14_TMC2208_BTT_TFT
+        name: SKR14_TMC2208_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
         
     - name: Cleanup bin
@@ -109,7 +109,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: SKR14_TMC2209_BTT_TFT Artifact
       with:
-        name: SKR14_TMC2209_BTT_TFT
+        name: SKR14_TMC2209_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
         
     - name: Cleanup bin
@@ -127,7 +127,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: SKR14TURBO_TMC2208_BTT_TFT Artifact
       with:
-        name: SKR14TURBO_TMC2208_BTT_TFT
+        name: SKR14TURBO_TMC2208_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
         
     - name: Cleanup bin
@@ -145,26 +145,8 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: SKR14TURBO_TMC2208_BTT_TFT Artifact
       with:
-        name: SKR14TURBO_TMC2208_BTT_TFT
+        name: SKR14TURBO_TMC2208_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
         
     - name: Cleanup bin
       run: rm ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
-      
-    # TRIGORILLA_PRO
-    - name: Copy Configs
-      run: |
-        rm ./Marlin/Configuration.h
-        \cp ./buildconfigs/TRIGORILLA_PRO/Configuration.h ./Marlin/Configuration.h
-        
-    - name: PlatformIO build of TRIGORILLA_PRO
-      run: pio run --environment=trigorilla_pro
-      
-    - uses: actions/upload-artifact@v2
-      name: TRIGORILLA_PRO Artifact
-      with:
-        name: TRIGORILLA_PRO
-        path: ${{ github.workspace }}/.pio/build/trigorilla_pro/firmware.bin
-        
-    - name: Cleanup bin
-      run: rm ${{ github.workspace }}/.pio/build/trigorilla_pro/firmware.bin
