@@ -48,8 +48,8 @@ jobs:
     # SKR14
     - name: Copy Configs
       run: |
-        mv ${{ github.workspace }}/Marlin/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h.old
-        mv ${{ github.workspace }}/buildconfigs/SKR14_TMC2209_BTT_TFT/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h
+        mv ${{ github.workspace }}/Configuration.h ${{ github.workspace }}/Configuration.h.old
+        mv ${{ github.workspace }}/../buildconfigs/SKR14_TMC2209_BTT_TFT/Configuration.h ${{ github.workspace }}/Configuration.h
         
     - name: PlatformIO build for LPC1768
       run: pio run --environment=LPC1768
@@ -63,8 +63,8 @@ jobs:
     # SKR14 Turbo
     - name: Copy Configs
       run: |
-        mv ${{ github.workspace }}/Marlin/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h.old
-        mv ${{ github.workspace }}/buildconfigs/SKR14TURBO_TMC2209_BTT_TFT/Configuration.h ${{ github.workspace }}/Marlin/Configuration.h
+        mv ${{ github.workspace }}/Configuration.h ${{ github.workspace }}/Configuration.h.old
+        mv ${{ github.workspace }}/../buildconfigs/SKR14TURBO_TMC2209_BTT_TFT/Configuration.h ${{ github.workspace }}/Configuration.h
         
     - name: PlatformIO build for LPC1769
       run: pio run --environment=LPC1769
