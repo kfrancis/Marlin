@@ -47,4 +47,9 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: PlatformIO build for LPC1769
-      run: pio run -v --environment=LPC1769
+      run: pio run --environment=LPC1769
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: skr14turbo_firmware.bin
+        path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
