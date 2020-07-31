@@ -28,7 +28,7 @@ jobs:
     
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Select Python 3.7
@@ -44,12 +44,23 @@ jobs:
           
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      
+    # SKR14
+    - name: PlatformIO build for LPC1768
+      run: pio run --environment=LPC1768
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR14 Artifact
+      with:
+        name: skr14_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
 
-    # Runs a single command using the runners shell
+    # SKR14 Turbo
     - name: PlatformIO build for LPC1769
       run: pio run --environment=LPC1769
       
     - uses: actions/upload-artifact@v2
+      name: SKR14 Turbo Artifact
       with:
-        name: skr14turbo_firmware.bin
+        name: skr14turbo_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
