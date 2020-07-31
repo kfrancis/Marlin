@@ -47,4 +47,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: PlatformIO build
-      run: pio run -v
+      run: pio run -v --environment=lpc1769
