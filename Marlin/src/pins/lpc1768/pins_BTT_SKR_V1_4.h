@@ -26,6 +26,14 @@
 #endif
 
 //
+// EEPROM
+//
+#if NONE(FLASH_EEPROM_EMULATION, SDCARD_EEPROM_EMULATION)
+  #define FLASH_EEPROM_EMULATION
+  //#define SDCARD_EEPROM_EMULATION
+#endif
+
+//
 // SD Connection
 //
 #ifndef SDCARD_CONNECTION
@@ -45,6 +53,7 @@
 #define Z_DIAG_PIN                         P1_27  // Z-STOP
 #define E0_DIAG_PIN                        P1_26  // E0DET
 #define E1_DIAG_PIN                        P1_25  // E1DET
+#define Z_MIN_PIN          			     P0_10   // probe force														 
 
 //
 // Limit Switches
