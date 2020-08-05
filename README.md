@@ -1,4 +1,4 @@
-# Marlin 3D Printer Firmware
+# Kris Waclawski's customizations for Marlin 3D Printer Firmware
 
 ![Customized Predator Marlin Builds](https://github.com/kfrancis/Marlin/workflows/Marlin%20Build/badge.svg?branch=2.0.x)
 
@@ -13,4 +13,6 @@ Marlin 2.0 takes this popular RepRap firmware to the next level by adding suppor
 
 Download earlier versions of Marlin on the [Releases page](https://github.com/MarlinFirmware/Marlin/releases).
 
+## What is this
 
+I've taken Kris Waclawski's changes and I'm using git to make the process of updating from Marlin easier, getting those prebuilt configs made available to make the process of updating a Predator easier. 
