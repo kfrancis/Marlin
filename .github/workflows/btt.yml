@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Predator Marlin Build
+name: Predator Marlin BTT Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the 2.0.x branch
@@ -20,8 +20,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "build_btt"
+  build_btt:
     if: github.repository == 'kfrancis/Marlin'
     
     # The type of runner that the job will run on
@@ -137,13 +137,13 @@ jobs:
     - name: Copy Configs
       run: |
         rm ./Marlin/Configuration.h
-        \cp ./buildconfigs/SKR14TURBO_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR14TURBO_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
         
     - name: PlatformIO build of SKR14TURBO_TMC2209_BTT_TFT
       run: pio run --environment=LPC1769
       
     - uses: actions/upload-artifact@v2
-      name: SKR14TURBO_TMC2208_BTT_TFT Artifact
+      name: SKR14TURBO_TMC2209_BTT_TFT Artifact
       with:
         name: SKR14TURBO_TMC2209_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin

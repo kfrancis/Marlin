@@ -19,12 +19,12 @@ I've taken Kris Waclawski's changes and I'm using git to make the process of upd
 
 ### Currently Supported Pre-Builds (see buildconfigs directory)
 
-* SKR 1.3 with TMC2208 and BTT TFT
-* SKR 1.3 with TMC2209 and BTT TFT
-* SKR 1.4 with TMC2208 and BTT TFT
-* SKR 1.4 with TMC2209 and BTT TFT
-* SKR 1.4 TURBO with TMC2208 and BTT TFT
-* SKR 1.4 TURBO with TMC2209 and BTT TFT
+* SKR 1.3 with TMC2208 and BTT TFT (or FYSETC Mini 2.1)
+* SKR 1.3 with TMC2209 and BTT TFT (or FYSETC Mini 2.1)
+* SKR 1.4 with TMC2208 and BTT TFT (or FYSETC Mini 2.1)
+* SKR 1.4 with TMC2209 and BTT TFT (or FYSETC Mini 2.1)
+* SKR 1.4 TURBO with TMC2208 and BTT TFT (or FYSETC Mini 2.1)
+* SKR 1.4 TURBO with TMC2209 and BTT TFT (or FYSETC Mini 2.1)
 * SKR v2.0 RevA with TMC2208 and BTT TFT [Careful, extra notes here](https://docs.google.com/document/d/1swmc4HvP9vxrxV2b9LVGa_I7GLTQGogQns7CfMYCckA/edit)
 * SKR v2.0 RevA with TMC2209 and BTT TFT [Careful, extra notes here](https://docs.google.com/document/d/1swmc4HvP9vxrxV2b9LVGa_I7GLTQGogQns7CfMYCckA/edit)
 * SKR v2.0 RevB with TMC2208 and BTT TFT
