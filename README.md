@@ -1,6 +1,8 @@
 # Kris Waclawski's customizations for Marlin 3D Printer Firmware
 
-![Customized Predator Marlin Builds](https://github.com/kfrancis/Marlin/workflows/Marlin%20Build/badge.svg?branch=2.0.x)
+[![Predator Marlin Fysetc Build](https://github.com/kfrancis/Marlin/actions/workflows/fysetcmini21.yml/badge.svg)](https://github.com/kfrancis/Marlin/actions/workflows/fysetcmini21.yml)
+
+[![Predator Marlin BTT Build](https://github.com/kfrancis/Marlin/actions/workflows/btt.yml/badge.svg)](https://github.com/kfrancis/Marlin/actions/workflows/btt.yml)
 
 <img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />
 
