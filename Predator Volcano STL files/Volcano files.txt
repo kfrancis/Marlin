@@ -1,9 +1,0 @@
-In this folder, you'll find the 4020 fan duct STL file for a Volcano conversion,
-also the STL file for the extended Z probe mount is included
-
-I strongly suggest looking into using a full metal MK8 M6x30 smooth throat (like for a CTC printer) as this
-will allow converting the Predator into a full metal hotend unit with a minimum of cost, reusing the existing
-Anycubic hotend by simply replacing the existing AC heatbreak with the MK8 full metal version.
-
-For those who're looking for a full E3DV6 version, I strongly suggest contacting Graham Burwise who's doing a 
-great job by providing a new machined and hardware modified effector allowing the standard E3DV6 heat sink to be used.
