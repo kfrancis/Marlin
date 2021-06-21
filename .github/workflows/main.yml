@@ -147,6 +147,66 @@ jobs:
       with:
         name: SKR14TURBO_TMC2209_BTT_TFT_firmware
         path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
-        
+
     - name: Cleanup bin
       run: rm ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
+
+    # SKRv2A_TMC2208_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKRv2A_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKRv2A_TMC2208_BTT_TFT
+      run: pio run --environment=BIGTREE_SKR_2
+      
+    - uses: actions/upload-artifact@v2
+      name: SKRv2A_TMC2208_BTT_TFT Artifact
+      with:
+        name: SKRv2A_TMC2208_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/BIGTREE_SKR_2/firmware.bin
+
+    # SKRv2A_TMC2209_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKRv2A_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKRv2A_TMC2209_BTT_TFT
+      run: pio run --environment=BIGTREE_SKR_2
+      
+    - uses: actions/upload-artifact@v2
+      name: SKRv2A_TMC2209_BTT_TFT Artifact
+      with:
+        name: SKRv2A_TMC2209_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/BIGTREE_SKR_2/firmware.bin
+
+    # SKRv2B_TMC2208_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKRv2B_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKRv2B_TMC2208_BTT_TFT
+      run: pio run --environment=BIGTREE_SKR_2
+      
+    - uses: actions/upload-artifact@v2
+      name: SKRv2B_TMC2208_BTT_TFT Artifact
+      with:
+        name: SKRv2B_TMC2208_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/BIGTREE_SKR_2/firmware.bin
+
+    # SKRv2B_TMC2209_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKRv2B_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKRv2B_TMC2209_BTT_TFT
+      run: pio run --environment=BIGTREE_SKR_2
+      
+    - uses: actions/upload-artifact@v2
+      name: SKRv2B_TMC2209_BTT_TFT Artifact
+      with:
+        name: SKRv2B_TMC2209_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/BIGTREE_SKR_2/firmware.bin
