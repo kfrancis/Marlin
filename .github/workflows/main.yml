@@ -1,0 +1,152 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Predator Marlin Build
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the 2.0.x branch
+on:
+  push:
+    branches: [ 2.0.x ]
+    paths-ignore:
+    - data/**
+    - docs/**
+    - '**/*.md'
+  pull_request:
+    branches: [ 2.0.x ]
+    paths-ignore:
+    - data/**
+    - docs/**
+    - '**/*.md'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    if: github.repository == 'kfrancis/Marlin'
+    
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Select Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7' # Version range or exact version of a Python version to use, using semvers version range syntax.
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+
+    - name: Install PlatformIO
+      run: |
+        pip install -U https://github.com/platformio/platformio-core/archive/develop.zip
+        platformio update
+          
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    
+    # SKR13_TMC2208_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR13_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKR13_TMC2208_BTT_TFT
+      run: pio run --environment=LPC1768
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR13_TMC2208_BTT_TFT Artifact
+      with:
+        name: SKR13_TMC2208_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+        
+    - name: Cleanup bin
+      run: rm ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+    
+    # SKR13_TMC2209_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR13_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKR13_TMC2209_BTT_TFT
+      run: pio run --environment=LPC1768
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR13_TMC2209_BTT_TFT Artifact
+      with:
+        name: SKR13_TMC2209_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+        
+    - name: Cleanup bin
+      run: rm ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+  
+    # SKR14_TMC2208_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR14_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKR14_TMC2208_BTT_TFT
+      run: pio run --environment=LPC1768
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR14_TMC2208_BTT_TFT Artifact
+      with:
+        name: SKR14_TMC2208_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+        
+    - name: Cleanup bin
+      run: rm ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+    
+    # SKR14_TMC2209_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR14_TMC2209_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKR14_TMC2209_BTT_TFT
+      run: pio run --environment=LPC1768
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR14_TMC2209_BTT_TFT Artifact
+      with:
+        name: SKR14_TMC2209_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+        
+    - name: Cleanup bin
+      run: rm ${{ github.workspace }}/.pio/build/LPC1768/firmware.bin
+    
+    # SKR14TURBO_TMC2208_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR14TURBO_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKR14TURBO_TMC2208_BTT_TFT
+      run: pio run --environment=LPC1769
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR14TURBO_TMC2208_BTT_TFT Artifact
+      with:
+        name: SKR14TURBO_TMC2208_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
+        
+    - name: Cleanup bin
+      run: rm ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
+    
+    # SKR14TURBO_TMC2209_BTT_TFT
+    - name: Copy Configs
+      run: |
+        rm ./Marlin/Configuration.h
+        \cp ./buildconfigs/SKR14TURBO_TMC2208_BTT_TFT/Configuration.h ./Marlin/Configuration.h
+        
+    - name: PlatformIO build of SKR14TURBO_TMC2209_BTT_TFT
+      run: pio run --environment=LPC1769
+      
+    - uses: actions/upload-artifact@v2
+      name: SKR14TURBO_TMC2208_BTT_TFT Artifact
+      with:
+        name: SKR14TURBO_TMC2209_BTT_TFT_firmware
+        path: ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
+        
+    - name: Cleanup bin
+      run: rm ${{ github.workspace }}/.pio/build/LPC1769/firmware.bin
